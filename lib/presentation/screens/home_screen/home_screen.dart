@@ -13,7 +13,10 @@ class HomeScreen extends StatelessWidget {
   Widget buildBody(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverList(delegate: SliverChildListDelegate([Text("ToDos")]))
+        SliverList(
+            delegate: SliverChildListDelegate([
+          Text("ToDos"),
+        ]))
       ],
     );
   }
