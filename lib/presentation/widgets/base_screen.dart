@@ -4,16 +4,18 @@ import 'package:flutter/src/widgets/framework.dart';
 
 class BaseScreen extends StatelessWidget {
   final Widget body;
-  const BaseScreen({
+  AppBar? appBar;
+  BaseScreen({
     Key? key,
+    this.appBar,
     required this.body,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       body: body,
-    ));
+      appBar: appBar,
+    );
   }
 }

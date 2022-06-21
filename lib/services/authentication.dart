@@ -15,8 +15,9 @@ class Auth {
         email: email,
         password: password,
       );
-      return "Your account has been created successfully.";
+      return "Success";
     } on FirebaseAuthException catch (e) {
+      print(e.message);
       return Future.value(e.message);
     } catch (e) {
       rethrow;
@@ -26,14 +27,16 @@ class Auth {
   Future<String> signIn(
       {required String email, required String password}) async {
     try {
-      await auth.createUserWithEmailAndPassword(
+      await auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
-      return "Your account has been created successfully.";
+      return "Success";
     } on FirebaseAuthException catch (e) {
+      print(e.message);
       return Future.value(e.message);
     } catch (e) {
+      print(e);
       rethrow;
     }
   }
@@ -45,7 +48,7 @@ class Auth {
         email: email,
         password: password,
       );
-      return "Your account has been created successfully.";
+      return "Success";
     } on FirebaseAuthException catch (e) {
       return Future.value(e.message);
     } catch (e) {
