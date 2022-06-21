@@ -1,14 +1,11 @@
-import 'package:accountant_pro/data/models/todo.dart';
-import 'package:accountant_pro/services/authentication.dart';
-import 'package:accountant_pro/services/database.dart';
-import 'package:accountant_pro/utils/app_styles.dart';
+import 'package:super_do/data/models/todo.dart';
+import 'package:super_do/services/database.dart';
+import 'package:super_do/utils/app_styles.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-import 'package:accountant_pro/presentation/widgets/base_screen.dart';
+import 'package:super_do/presentation/widgets/base_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final FirebaseAuth auth;
@@ -29,16 +26,26 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
-        appBar: AppBar(title: Text("To Do app")), body: buildBody(context));
+        appBar: AppBar(
+          title: const Text("To Do app"),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  auth.signOut();
+                },
+                icon: Icon(Icons.exit_to_app))
+          ],
+        ),
+        body: buildBody(context));
   }
 
   Widget buildBody(BuildContext context) {
-    TextEditingController _contentController = TextEditingController();
+    TextEditingController contentController = TextEditingController();
     return Column(
       children: [
         Container(
             height: 180,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               children: [
                 Center(
@@ -48,27 +55,27 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Card(
-                  margin: EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Row(
                       children: [
                         Expanded(
                           child: TextFormField(
-                            controller: _contentController,
+                            controller: contentController,
                           ),
                         ),
                         IconButton(
                             onPressed: () {
-                              if (_contentController.text != "") {
+                              if (contentController.text != "") {
                                 setState(() {
                                   Database(firestore: firestore).addTodo(
-                                      _contentController.text,
+                                      contentController.text,
                                       auth.currentUser!.uid);
                                 });
                               }
                             },
-                            icon: Icon(Icons.add)),
+                            icon: const Icon(Icons.add)),
                       ],
                     ),
                   ),
@@ -81,19 +88,25 @@ class _HomeScreenState extends State<HomeScreen> {
           builder: (BuildContext context, AsyncSnapshot<List<Todo>> snapshot) {
             if (snapshot.connectionState == ConnectionState.active) {
               if (snapshot.data?.length == 0) {
-                return Text("You have no To Dos");
+                return const Text("You have no unfinished ToDos");
               }
             }
-            return snapshot != null && snapshot.data != null
+            return snapshot.data != null
                 ? Expanded(
                     child: ListView.builder(
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
                         return Card(
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 8),
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(snapshot.data![index].content!),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0),
+                                  child: Text(snapshot.data![index].content!),
+                                ),
                                 Row(
                                   children: [
                                     IconButton(
@@ -104,10 +117,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                           todoId: snapshot.data![index].id!,
                                         );
                                         ScaffoldMessenger.of(context)
-                                            .showSnackBar(SnackBar(
+                                            .showSnackBar(const SnackBar(
                                                 content: Text("Deleted")));
                                       },
-                                      icon: Icon(Icons.delete),
+                                      icon: const Icon(Icons.delete),
                                     ),
                                     Checkbox(
                                       value:
@@ -130,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                     ),
                   )
-                : Center(child: Text("There was an error"));
+                : const Center(child: Text("There was an error"));
           },
         ),
       ],

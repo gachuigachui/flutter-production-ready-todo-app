@@ -1,5 +1,5 @@
-import 'package:accountant_pro/presentation/widgets/base_screen.dart';
-import 'package:accountant_pro/utils/app_colors.dart';
+import 'package:super_do/presentation/widgets/base_screen.dart';
+import 'package:super_do/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class LoadingSplashScreen extends StatelessWidget {

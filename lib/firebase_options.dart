@@ -37,30 +37,30 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA3A7laPhvsC_HkEbV9e9ytVXzFWoLoV64',
-    appId: '1:662323600697:web:761865e828a99237e29ce8',
-    messagingSenderId: '662323600697',
-    projectId: 'accountant-p',
-    authDomain: 'accountant-p.firebaseapp.com',
-    storageBucket: 'accountant-p.appspot.com',
-    measurementId: 'G-CLJ5TZR0EZ',
+    apiKey: 'AIzaSyCXTOn6OF0OpeJC5PgMDlWZG9JRi0vxSxo',
+    appId: '1:590713649591:web:b74b07b5747b5e72ca1032',
+    messagingSenderId: '590713649591',
+    projectId: 'superdo-2c7b1',
+    authDomain: 'superdo-2c7b1.firebaseapp.com',
+    storageBucket: 'superdo-2c7b1.appspot.com',
+    measurementId: 'G-L2QRYJR56X',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDFgmPGBgwWm02itU_lYlO1D3l5AmpCg4I',
-    appId: '1:662323600697:android:97f455d0de45025ee29ce8',
-    messagingSenderId: '662323600697',
-    projectId: 'accountant-p',
-    storageBucket: 'accountant-p.appspot.com',
+    apiKey: 'AIzaSyANwBZi0nhA7muagHnHw09GprA2ClvgRJs',
+    appId: '1:590713649591:android:21de72dc12989376ca1032',
+    messagingSenderId: '590713649591',
+    projectId: 'superdo-2c7b1',
+    storageBucket: 'superdo-2c7b1.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD6WBPdwZoeIVN4N9uC1OSV1mYmL3j4928',
-    appId: '1:662323600697:ios:001f82f6a2c3a48ce29ce8',
-    messagingSenderId: '662323600697',
-    projectId: 'accountant-p',
-    storageBucket: 'accountant-p.appspot.com',
-    iosClientId: '662323600697-q6r99sji7p95c10783q5gg8pf5mrhact.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCwwG4Ha0Cc_FgaAu1jHM8tZlGAo6k4x68',
+    appId: '1:590713649591:ios:8e790d4b4ceaf2c2ca1032',
+    messagingSenderId: '590713649591',
+    projectId: 'superdo-2c7b1',
+    storageBucket: 'superdo-2c7b1.appspot.com',
+    iosClientId: '590713649591-jmktj2qc6ov1aot5852fb16d133i8i4m.apps.googleusercontent.com',
     iosBundleId: 'com.example.accountantPro',
   );
 }

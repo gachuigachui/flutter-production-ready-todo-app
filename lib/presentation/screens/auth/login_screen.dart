@@ -1,12 +1,11 @@
-import 'package:accountant_pro/presentation/screens/auth/signup_screen.dart';
-import 'package:accountant_pro/utils/app_styles.dart';
+import 'package:super_do/presentation/screens/auth/signup_screen.dart';
+import 'package:super_do/utils/app_styles.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-import 'package:accountant_pro/presentation/widgets/base_screen.dart';
-import 'package:accountant_pro/services/authentication.dart';
+import 'package:super_do/presentation/widgets/base_screen.dart';
+import 'package:super_do/services/authentication.dart';
 
 class LoginScreen extends StatelessWidget {
   FirebaseAuth auth;
@@ -19,10 +18,10 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController _emailController = TextEditingController();
-    _emailController.text = "test@gmail.com";
-    TextEditingController _passwordlController = TextEditingController();
-    _passwordlController.text = "password";
+    TextEditingController emailController = TextEditingController();
+    emailController.text = "test@gmail.com";
+    TextEditingController passwordlController = TextEditingController();
+    passwordlController.text = "password";
     return BaseScreen(
         body: Padding(
       padding: const EdgeInsets.all(30.0),
@@ -37,21 +36,21 @@ class LoginScreen extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           TextField(
-            controller: _emailController,
+            controller: emailController,
           ),
           const SizedBox(height: 10),
           TextField(
-            controller: _passwordlController,
+            controller: passwordlController,
           ),
           const SizedBox(height: 30),
           ElevatedButton(
               onPressed: () async {
                 var retVal = await Auth(auth: auth).signIn(
-                    email: _emailController.text.trim(),
-                    password: _passwordlController.text);
+                    email: emailController.text.trim(),
+                    password: passwordlController.text);
                 if (retVal == "Success") {
-                  _emailController.clear();
-                  _passwordlController.clear();
+                  emailController.clear();
+                  passwordlController.clear();
                 } else {
                   ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text(retVal)));
@@ -75,7 +74,7 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text("Don't have an account?"),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               InkWell(

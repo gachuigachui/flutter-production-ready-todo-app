@@ -1,12 +1,11 @@
-import 'package:accountant_pro/presentation/screens/auth/login_screen.dart';
-import 'package:accountant_pro/services/authentication.dart';
-import 'package:accountant_pro/utils/app_styles.dart';
+import 'package:super_do/presentation/screens/auth/login_screen.dart';
+import 'package:super_do/services/authentication.dart';
+import 'package:super_do/utils/app_styles.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-import 'package:accountant_pro/presentation/widgets/base_screen.dart';
+import 'package:super_do/presentation/widgets/base_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   FirebaseAuth auth;
@@ -59,8 +58,8 @@ class SignUpScreen extends StatelessWidget {
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text("Sign Up"),
+                children: const [
+                  Text("Sign Up"),
                 ],
               )),
           const SizedBox(
@@ -73,8 +72,8 @@ class SignUpScreen extends StatelessWidget {
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text("Sign With Google"),
+                children: const [
+                  Text("Sign With Google"),
                 ],
               )),
           const SizedBox(
@@ -84,7 +83,7 @@ class SignUpScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text("Already have an account?"),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               InkWell(

@@ -1,4 +1,4 @@
-package com.gachuiapps.accountant
+package com.gachuiapps.superdo
 
 import io.flutter.embedding.android.FlutterActivity
 

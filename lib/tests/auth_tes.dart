@@ -1,4 +1,4 @@
-import 'package:accountant_pro/services/authentication.dart';
+import 'package:super_do/services/authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';

@@ -1,4 +1,4 @@
-import 'package:accountant_pro/presentation/screens/intro/loading_splash_scree.dart';
+import 'package:super_do/presentation/screens/intro/loading_splash_scree.dart';
 import 'package:flutter/material.dart';
 
 class MyRouter {

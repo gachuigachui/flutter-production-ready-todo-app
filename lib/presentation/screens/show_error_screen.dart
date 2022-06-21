@@ -1,6 +1,5 @@
-import 'package:accountant_pro/presentation/widgets/base_screen.dart';
+import 'package:super_do/presentation/widgets/base_screen.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ShowErrorScreen extends StatelessWidget {
   const ShowErrorScreen({super.key});

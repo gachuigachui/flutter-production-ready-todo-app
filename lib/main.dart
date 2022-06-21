@@ -3,13 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'package:accountant_pro/firebase_options.dart';
-import 'package:accountant_pro/presentation/router/my_router.dart';
-import 'package:accountant_pro/presentation/screens/auth/login_screen.dart';
-import 'package:accountant_pro/presentation/screens/home_screen/home_screen.dart';
-import 'package:accountant_pro/presentation/screens/show_error_screen.dart';
-import 'package:accountant_pro/presentation/widgets/base_screen.dart';
-import 'package:accountant_pro/services/authentication.dart';
+import 'package:super_do/firebase_options.dart';
+import 'package:super_do/presentation/screens/auth/login_screen.dart';
+import 'package:super_do/presentation/screens/home_screen/home_screen.dart';
+import 'package:super_do/presentation/screens/show_error_screen.dart';
+import 'package:super_do/presentation/widgets/base_screen.dart';
+import 'package:super_do/services/authentication.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,6 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: FutureBuilder(
         future: _initialization,
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           if (snapshot.hasError) {
             return const ShowErrorScreen();
           } else if (snapshot.connectionState == ConnectionState.done) {
-            return Root();
+            return const Root();
           } else {
             return const Loading();
           }
@@ -50,7 +50,7 @@ class Loading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BaseScreen(body: Center(child: CircularProgressIndicator()));
+    return BaseScreen(body: const Center(child: CircularProgressIndicator()));
   }
 }
 
@@ -87,7 +87,7 @@ class _RootState extends State<Root> {
   Scaffold buildView() {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Todo"),
+        title: const Text("Todo"),
       ),
       body: Center(
         child: Column(

@@ -1,4 +1,4 @@
-import 'package:accountant_pro/data/models/todo.dart';
+import 'package:super_do/data/models/todo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Database {
@@ -46,7 +46,9 @@ class Database {
           .collection('todos')
           .doc(todoId)
           .update({"isDone": status});
-    } catch (e) {}
+    } catch (e) {
+      rethrow;
+    }
   }
 
   Future<void> deleteTodo({required String uid, required String todoId}) async {

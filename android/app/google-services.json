@@ -1,73 +1,37 @@
 {
   "project_info": {
-    "project_number": "662323600697",
-    "project_id": "accountant-p",
-    "storage_bucket": "accountant-p.appspot.com"
+    "project_number": "590713649591",
+    "project_id": "superdo-2c7b1",
+    "storage_bucket": "superdo-2c7b1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:662323600697:android:88f3ea3a5b499527e29ce8",
+        "mobilesdk_app_id": "1:590713649591:android:21de72dc12989376ca1032",
         "android_client_info": {
-          "package_name": "com.example.accountant_pro"
+          "package_name": "com.gachuiapps.superdo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "662323600697-5qsvquv7m1ec2adr0058afaqg45ti6uq.apps.googleusercontent.com",
+          "client_id": "590713649591-9ljnhe35ep2c5ff88p1jdf44vf3g0fmn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDFgmPGBgwWm02itU_lYlO1D3l5AmpCg4I"
+          "current_key": "AIzaSyANwBZi0nhA7muagHnHw09GprA2ClvgRJs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "662323600697-5qsvquv7m1ec2adr0058afaqg45ti6uq.apps.googleusercontent.com",
+              "client_id": "590713649591-9ljnhe35ep2c5ff88p1jdf44vf3g0fmn.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "662323600697-q6r99sji7p95c10783q5gg8pf5mrhact.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.accountantPro"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:662323600697:android:97f455d0de45025ee29ce8",
-        "android_client_info": {
-          "package_name": "com.gachuiapps.accountant"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "662323600697-5qsvquv7m1ec2adr0058afaqg45ti6uq.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDFgmPGBgwWm02itU_lYlO1D3l5AmpCg4I"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "662323600697-5qsvquv7m1ec2adr0058afaqg45ti6uq.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "662323600697-q6r99sji7p95c10783q5gg8pf5mrhact.apps.googleusercontent.com",
+              "client_id": "590713649591-jmktj2qc6ov1aot5852fb16d133i8i4m.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.example.accountantPro"
